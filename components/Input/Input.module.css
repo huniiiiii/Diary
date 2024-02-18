@@ -1,0 +1,47 @@
+.inputwrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.inputcontainer {
+  position: relative;
+  display: flex;
+  width: 300px;
+  padding: 18px 15px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid var(--Linkbrary-gray20, #ccd5e3);
+  background: var(--Linkbrary-white, #fff);
+}
+
+.inputfield {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.inputcontainer:focus-within {
+  border-color: #6d6afe;
+}
+
+.passwordtoggle {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+
+.errormessage {
+  display: flex;
+  color: var(--Linkbrary-red, #ff5b56);
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.inputcontainer.error {
+  border-color: #ff5b56;
+}
