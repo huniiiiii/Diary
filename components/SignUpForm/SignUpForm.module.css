@@ -1,0 +1,17 @@
+.signupbutton {
+  display: flex;
+  width: 330px;
+  height: 50px;
+  justify-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccd5e3;
+  color: white;
+  font-family: Prettendard;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #3e3e3e;
+  cursor: pointer;
+}
