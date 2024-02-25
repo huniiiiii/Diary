@@ -1,6 +1,5 @@
 import styles from './page.module.css';
-import LoginForm from '../../components/Input/LoginForm';
-import LoginButton from '../../components/Loginbutton/Loginbutton';
+import LoginForm from '../../components/LoginForm/LoginForm';
 
 export default function Home() {
   return (
@@ -9,7 +8,6 @@ export default function Home() {
         <img src="/assets/logo.svg" alt="logo" className={styles.logo} />
         <div className={styles.loginbox}>
           <LoginForm />
-          <LoginButton />
         </div>
       </div>
     </div>

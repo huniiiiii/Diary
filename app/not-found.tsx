@@ -1,4 +1,4 @@
-import LoginForm from '../components/Input/LoginForm';
+import LoginForm from '../components/LoginForm/LoginForm';
 
 export default function NotFound() {
   return (

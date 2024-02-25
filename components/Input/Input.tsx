@@ -1,47 +1,45 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
 import styles from './Input.module.css';
-import { platform } from 'os';
 
 interface InputProps {
+  name: string;
   type: 'text' | 'password';
-  onValidate?: (value: string) => boolean;
+  placeholder?: string;
+  error?: object;
+  validation?: object;
 }
 
-function Input({ type, onValidate, placeholder }: InputProps) {
-  const [inputType, setInputType] = useState<string>(type);
-  const [value, setValue] = useState<string>('');
-  const [isError, setIsError] = useState<boolean>(false);
+const Input = ({ name, type, placeholder, validation }: InputProps) => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+  const isError = Boolean(errors[name]);
 
-  const toggleVisibility = () => {
+  const [inputType, setInputType] = React.useState(type);
+  const toggleVisibility = () =>
     setInputType(prevType => (prevType === 'password' ? 'text' : 'password'));
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value;
-    setValue(newValue);
-
-    if (!newValue) {
-      setIsError(false);
-    } else {
-      const error = onValidate ? onValidate(newValue) : false;
-      setIsError(error);
-    }
-  };
 
   return (
     <div className={styles.inputwrapper}>
-      <div className={`${styles.inputcontainer} ${isError ? 'error' : ''}`}>
+      <div
+        className={`${styles.inputcontainer} ${isError ? styles.error : ''}`}
+      >
         <input
           type={inputType}
           placeholder={placeholder}
-          value={value}
-          onChange={handleChange}
+          {...register(name, validation)}
           className={styles.inputfield}
         />
         {type === 'password' && (
-          <div onClick={toggleVisibility} className={styles.passwordtoggle}>
+          <button
+            onClick={toggleVisibility}
+            className={styles.passwordtoggle}
+            type="button"
+          >
             <img
               src={
                 inputType === 'password'
@@ -50,14 +48,14 @@ function Input({ type, onValidate, placeholder }: InputProps) {
               }
               alt="Toggle Password Visibility"
             />
-          </div>
+          </button>
         )}
       </div>
-      {value && isError && (
-        <p className={styles.errormessage}>내용을 다시 작성해 주세요</p>
+      {errors[name] && (
+        <p className={styles.errormessage}>{errors[name]?.message}</p>
       )}
     </div>
   );
-}
+};
 
 export default Input;
