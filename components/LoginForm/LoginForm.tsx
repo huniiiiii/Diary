@@ -3,13 +3,30 @@
 import React from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import Input from '../Input/Input';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 import styles from './LoginForm.module.css';
 
 function LoginForm() {
   const methods = useForm();
+  const router = useRouter();
 
-  const onSubmit = data => {
-    console.log(data);
+  const onSubmit = async data => {
+    try {
+      const response = await axios.post(
+        'https://diary.es6.kr/auth/login',
+        data,
+      );
+      console.log(response.data);
+      localStorage.setItem('userId', data.email);
+      router.push('/diary');
+    } catch (error) {
+      console.error(
+        '로그인 실패:',
+        error.response ? error.response.data : error,
+      );
+      alert('로그인 실패. 다시 시도해주세요.');
+    }
   };
 
   return (
