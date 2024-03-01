@@ -2,5 +2,51 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Madimi One';
+}
+
+.rbc-calendar {
+  font-size: 20px;
+  align-items: center !important;
+}
+
+.rbc-button-link {
+  font-family: 'Madimi One';
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.rbc-month-header {
+  margin-bottom: 50px;
+}
+
+.rbc-month-view {
+  border: none !important;
+}
+
+.rbc-header {
+  border-bottom: none !important;
+}
+
+.rbc-day-bg + .rbc-day-bg {
+  border-left: none !important;
+}
+
+.rbc-month-row + .rbc-month-row {
+  border: none !important;
+}
+
+.rbc-header + .rbc-header {
+  border: none !important;
+}
+.rbc-off-range {
+  visibility: hidden !important;
+}
+
+.rbc-off-range-bg {
+  background-color: white !important;
+}
+
+.rbc-today {
+  background-color: #eaeaea !important;
 }

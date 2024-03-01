@@ -1,0 +1,19 @@
+.toolbarbutton {
+  font-family: 'Madimi One';
+  font-size: 30px;
+  font-weight: 600;
+  color: #3e3e3e;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0 100px 40px;
+}
+
+.toolbarcontainer {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.month {
+  cursor: pointer;
+}

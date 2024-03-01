@@ -1,0 +1,13 @@
+.Calendar {
+  width: 90%;
+  max-width: 800px;
+  padding: 20px;
+  height: 80vh;
+  margin: 50px auto;
+  font-size: 16px;
+  background-color: #fdfdfd;
+  color: #3e3e3e;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-weight: 400;
+}
