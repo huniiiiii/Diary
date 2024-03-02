@@ -15,5 +15,11 @@
 }
 
 .month {
+  display: block;
   cursor: pointer;
+  width: 200px;
+}
+
+.toolbarcontainer div:nth-child(2) {
+  display: flex;
 }

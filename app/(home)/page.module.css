@@ -33,9 +33,5 @@
   text-decoration: underline;
   font-weight: bold;
   cursor: pointer;
-}
-
-.signuplink:visited {
-  text-decoration: none;
   color: white;
 }

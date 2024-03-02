@@ -12,7 +12,7 @@ function DiaryCalendar({}) {
   const [date, setDate] = useState(new Date());
 
   const handleSelectSlot = ({ start, end }) => {
-    const title = window.prompt('새 이벤트 제목을 입력하세요');
+    const title = window.prompt('일정을 입력하세요');
     if (title) {
       const newEvent = { start, end, title };
       setEvents(prevEvents => [...prevEvents, newEvent]);
